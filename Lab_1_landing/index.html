@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic LP Layout</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <nav class="zone blue sticky">
+        <ul class="main-nav">
+            <li><a href="#about">О стране</a></li>
+            <li class="push"><a href="#contact">Купить путёвку</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <img class="cover" src="img/1.jpeg">
+        <div class="coverText">
+            <h1>Switzerland.</h1>
+        </div>
+    </div>
+    <div id='about' class="zone blue grid-wrapper">
+        <div class="card zone">
+            <img src="./img/nature.jpeg">
+            <div class="text">
+                <h1>Природа</h1>
+                <p>У нас есть озёра, горы и луга.</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+        <div class="card zone"><img src="./img/food.jpeg">
+            <div class="text">
+                <h1>Кухня</h1>
+                <p>Раклет, фондю и вино. И, конечно, шоколад.</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+        <div class="card zone"><img src="./img/sport.jpeg">
+            <div class="text">
+                <h1>Спорт</h1>
+                <p>Горные лыжи, альпинизм, гребля.</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+        <div class="card zone"><img src="./img/fest.jpeg ">
+            <div class="text">
+                <h1>Развлечения</h1>
+                <p>Казино, отели, фестивали круглый год.</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+    </div>
+    <form id="contact" action="" method="post">
+        <h3>Контакт для связи</h3>
+        <h4>Мы перезвоним в течение 24 часов.</h4>
+        <fieldset>
+            <input placeholder="Имя" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Email" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Телефон" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="Комментарий" tabindex="4" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Отправить</button>
+        </fieldset>
+    </form>
+    <footer class="zone">
+        <p>2020 All right reserved.</p>
+    </footer>
+</body>
+
+</html>
