@@ -1,0 +1,117 @@
+<html>
+<!--
+ Анимация намеренно сделана некорректно!
+ Необходимо выяснить что именно здесь некорректно и сделать правильно.
+ Данный пример создан чтобы показать как должен выглядеть лоадер
+ -->
+<head>
+    <style>
+        @font-face {
+                font-family: "Pompadur";
+                src: url(AA-Neon.ttf);
+            }
+        body {
+            background: #343434;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader_text {
+            font-family: Pompadur, 'Courier';
+            font-size: 30px;
+            color: #fc7171;
+            animation: shine 2s forwards, blink 3s 2s infinite;        
+        }
+
+        .loader_round {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: #ff65bd;
+        }
+
+        .round1 {
+            -webkit-animation: 4s ease-in-out infinite moveround;
+            animation: 4s ease-in-out infinite moveround;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+
+         .round2 {
+            -webkit-animation: 4s ease-in-out infinite moveround;
+            animation: 4s ease-in-out infinite moveround;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        
+        .round3 {
+            -webkit-animation: 4s ease-in-out infinite moveround;
+            animation: 4s ease-in-out infinite moveround;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+        }
+        
+        .round4 {
+            -webkit-animation: 4s ease-in-out infinite moveround;
+            animation: 4s ease-in-out infinite moveround;
+        } 
+
+        @keyframes moveround {
+            0% {
+                -webkit-transform: translate(0%);
+                transform: translate(0%);
+            }
+
+             25% {
+                -webkit-transform: translate(100px);
+                transform: translate(100px);
+            } 
+
+            50% {
+                -webkit-transform: translate(100px, 100px);
+                transform: translate(100px, 100px);
+            }
+            
+            75% {
+                -webkit-transform: translate(0%, 100px);
+                transform: translate(0%, 100px);
+            } 
+        }
+
+        @keyframes shine {
+        0% {
+            color: #6b1839;
+            text-shadow: none;
+        }
+        100% {
+            color: #ffe6ff;
+            text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+            -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+            0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+        }
+}
+    </style>
+</head>
+<body>
+<div class="loader">
+    <span class="loader_text">wait</span>
+    <div class="loader_round round1"></div>
+    <div class="loader_round round2"></div>
+    <div class="loader_round round3"></div>
+    <div class="loader_round round4"></div>
+</div>
+</body>
+</html>
