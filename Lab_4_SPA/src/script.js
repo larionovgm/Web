@@ -1,3 +1,5 @@
+import "jquery";
+
 $(function () {
 
     $("#pokemon").click( function(){

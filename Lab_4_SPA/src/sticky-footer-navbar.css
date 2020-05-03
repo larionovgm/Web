@@ -41,6 +41,11 @@ body > .container.invisible {
   display: none;
 }
 
+.image {
+  display: block;
+  margin: 0 auto;
+}
+
 .pokemon-page{
   display: none;
 	transition: 0.6s;
@@ -53,4 +58,5 @@ body > .container.invisible {
 
 .pokemon-page.visible{
   display: block;
+
 }

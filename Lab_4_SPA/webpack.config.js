@@ -1,43 +1,33 @@
 const path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
   mode: 'development',
-  entry: path.join('index.html'),
-  watch: true,
+  entry: {
+    bundle: './src/index.js'
+    // pageOne: './src/script.js',
+    // pageTwo: './src/script2.js',
+    // popper: './src/popper.min.js',
+    // bootstrap: './src/bootstrap.min.js'
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    // filename: '[name].bundle.js',
     filename: "bundle.js",
-    chunkFilename: '[name].js'
   },
-  module: {
-    rules: [{
-      test: /.jsx?$/,
-      include: [
-        path.resolve(__dirname, 'src')
-      ],
-      exclude: [
-        path.resolve(__dirname, 'node_modules')
-      ],
-      loader: 'babel-loader',
-      query: {
-        presets: [
-          ["@babel/env", {
-            "targets": {
-              "browsers": "last 2 chrome versions"
-            }
-          }]
-        ]
-      }
-    }]
-  },
-  resolve: {
-    extensions: ['.json', '.js', '.jsx']
-  },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: path.join(__dirname, '/dist/'),
-    inline: true,
-    host: 'localhost',
-    port: 8080,
-  }
+ 
+  plugins: [
+    // ...
+    new webpack.ProvidePlugin({
+      Popper: ['popper.js', 'default'],
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    })
+    // ...
+  ],
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    "jquery": "jQuery"
+}
 };
